@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>If You Code, CodeSmart</title>
+	<link href="http://fonts.googleapis.com/css?family=Corben" rel="stylesheet" type="text/css"> 
+ 	<link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
+ 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Tangerine">
+	
+	<style type="text/css">
+	#mainContent {
+		font-family: 'Nobile', Helvetica, Arial, sans-serif;
+		font-size: x-large;
+		font-weight: bold;
+		background-color: #E3F0FB;
+		border-radius: 4px;
+		padding: 10px;
+		text-align: center;
+	}
+	
+	#require, #choices th {
+		text-align: center;
+		padding: 2%;
+	}
+	
+	#code_display, #choices th {
+		border-width: 16%;
+		border-style: hidden;
+		opacity: 0.7; 
+	}
+	
+	#code_display {
+		padding: 3px;
+		background: white;
+	}
+	
+	#choices th {
+		background: #9ce4e5;
+	}
+		
+	.cb {
+		font: Arial;
+		width: 16%;
+		text-align: left;
+	}
+	
+	.header {
+		background: url(Images/congruent_pentagon.png) repeat 0 0;
+		font-family: 'Corben', Georgia, Times, serif;
+	}
+	
+	.body {
+		background-color: #c6ffe5;
+		background-image: url(Images/turquoise-1861785_1280.jpg);
+		
+	}
+	
+	h1 {
+		text-shadow: 5px 1px 1px #ccc;
+	}
+	
+	.box {
+		margin: 2% 15% 2% 15%;
+		width = 64%;
+		font-family: Helvetica;
+		font-size: 17px;
+		color: #020028;
+	}
+	
+	#instruct {
+		background: #000000;
+		opacity: 0.7;
+	}
+	
+	#next, #submit {
+		margin: 5px;
+	}
+	
+	#next {
+		visibility: hidden;
+	}
+	
+	.inst {
+		font-family: Georgia;
+		margin: 2% 15% 2% 15%;
+		font-size: 20px;
+		color: #020028;
+	}
+	
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<h1>If You Code, CodeSmart</h1>
+		
+	</div>
+	
+	<div class="body" id="main">
+		<div class="inst">
+			<p id="instruc">
+			<strong>Instructions:</strong>
+			<br><br>
+			To complete the level, choose the appropriate code block from every column. <br>
+			Fill in the following blanks in the most logical manner possible, <br>
+			paying attention to the specifics provided below. <br>
+			</p>
+		</div>
+		
+		<div class="box"><p id="level"></p></div>
+		
+		<div class="box"><p id="variable"></p></div>
+		
+		<div class="box" id="require">
+		<table>
+			<tr>
+				<th class="rq"><p id="r1"></p></th>
+				<th class="rq"><p id="c1"></p></th>
+			</tr>
+			<tr>
+				<th class="rq"><p id="r2"></p></th>
+				<th class="rq"><p id="c2"></p></th>
+			</tr>
+			<tr>
+				<th class="rq"><p id="r3"></p></th>
+				<th class="rq"><p id="c3"></p></th>
+			</tr>
+		</table>
+		</div>
+		
+		<div class="box" id="blanks">
+			<p>___ the number of _____ is in range of ___, then _____.</p>
+		</div>
+		
+		<div class="box" id="code_display">
+			<p id="display1"></p>
+			<p id="display2"></p>
+			<p id="display3"></p>
+		</div>
+		
+		<div class="box" id="error"></div>
+		
+		<div class="box" id="choices">
+		<table>
+		  <tr>
+		    <th class="cb"><input type="radio" name="if" value="IF"><p>IF</p></th>
+		    <th class="cb"><input type="radio" name="var" value="CANDIES">
+		    	<p>CANDY <img class="pic" id="v1" width="15%"></p>
+		    </th> 
+		    <th class="cb"><input type="radio" name="exp" value="0 ~ 4"><p>0 ~ 4</p></th>
+		    <th class="cb"><input type="radio" name="stmt" value="HAPPY"><p>HAPPY</p></th>
+		  </tr>
+		  <tr>
+		    <th class="cb"><input type="radio" name="if" value="ELSE IF"><p>ELSE IF</p></th>
+		    <th class="cb"><input type="radio" name="var" value="CHOCOLATES">
+		    	<p>CHOCOLATE <img class="pic" id="v2" width="20%"></p>
+		    </th> 
+		    <th class="cb"><input type="radio" name="exp" value="5 ~ 9"><p>5 ~ 9</p></th>
+		    <th class="cb"><input type="radio" name="stmt" value="SICK"><p>SICK</p></th>
+		  </tr>
+		  <tr>
+		    <th class="cb"><input type="radio" name="if" value="ELSE"><p>ELSE</p></th>
+		    <th class="cb"><input type="radio" name="var" value="COOKIES">
+		    	<p>COOKIE <img class="pic" id="v3" width="15%"></p>
+		    </th> 
+		    <th class="cb"><input type="radio" name="exp" value="10+"><p>10+</p></th>
+		    <th class="cb"><input type="radio" name="stmt" value="SAD"><p>SAD</p></th>
+		  </tr>
+		  <tr>
+		  	<th class="cb"></th>
+		  	<th class="cb"><input type="radio" name="var" value="NOTHING"><p>...</p></th>
+		  	<th class="cb"><input type="radio" name="exp" value="NOTHING"><p>...</p></th>
+		  	<th class="cb"></th>
+		  </tr>
+		</table>
+		</div>
+		
+		<div class="box">
+			<button id="submit" onclick="submit()">Submit</button>
+			<button id="next" onclick="nextLevel()">Next Level</button>
+		</div>
+	</div>
+	
+	
+	
+	<script>
+	
+		var points = 0;
+
+		var if_pressed = false;
+		var elseif_pressed = false;
+		var else_pressed = false;
+		var buttons = new Array(4);
+		
+		var levelvariables = {
+		    1 : "COOKIES",
+		    2 : "CHOCOLATES",
+		    3 : "CANDIES"
+		};
+		
+		var leveloutcomes = {
+		    "0 ~ 4" : "SAD",
+		    "5 ~ 9" : "HAPPY",
+		    "10+" : "SICK"
+		}; //1 : "5 ~ 9" ; 2 : "0 ~ 4", "5 ~ 9"; 3 : "0 ~ 4", "5 ~ 9", "10+"
+		
+		
+		// var allbuttonanswers = [["if", "else if", "else"], ["COOKIES", "CHOCOLATES", "CANDIES"], ["0 ~ 4", "5 ~ 9", "10+"], ["SAD", "HAPPY", "SICK"]];
+		
+		// var allbuttons = result of a function in html;
+		
+		function check_buttons(allbuttons) {
+			//add in a block to check, if elseif_pressed, then else_pressed too
+			if (allbuttons[0] == "IF") {
+		    	if_pressed = true;
+			}
+		    else if (allbuttons[0] == "ELSE IF") {
+		        if (!if_pressed) {
+		        	//document.write("point1");
+		            return false;
+		        }
+		        elseif_pressed = true;
+		    }
+		    else if (allbuttons[0] == "ELSE") {
+		        if (!if_pressed) {
+		        	//document.write("point2");
+		            return false;
+		        }
+		        else_pressed = true;
+		    }
+		    else {
+		    	//document.write("point3");
+		        return false;
+		    }
+		    
+		    if (else_pressed) {
+		    	if (allbuttons[1] != "NOTHING" && allbuttons[2] != "NOTHING") {
+		    		//document.write(allbuttons[1]);
+		    		return false;
+		    	}
+	    		return true;
+		    } else {
+		    	if (allbuttons[1] != levelvariables[level]) {
+		    		//document.write(level);
+		    		//document.write("1 != level");
+		    		return false;
+		    	}
+			    if (allbuttons[3] != leveloutcomes[allbuttons[2]]) {
+			    	//document.write("3 != 2");
+			        return false;
+		    	}
+		    	return true;
+		    }
+		}
+	
+	
+	
+		// FEI'S CODE!!!!!!
+		var index = 0;
+		var level = 1;
+		var rArray = ["5 ~ 9","10+","0 ~ 4"];
+		var reqArray = ["r", "c"];
+		var bArray = ["if", "var", "exp", "stmt"];
+		
+		
+		
+		function setLevel(level) {
+			if (level > 3) {
+				document.getElementById("error").textContent = "";
+				document.getElementById("display1").textContent = "YOU PASSED";
+				document.getElementById("display2").textContent = "";
+				document.getElementById("display3").textContent = "";
+			} else {
+				index = 0;
+				unClick();
+				document.getElementById("variable").textContent = levelvariables[level];
+				document.getElementById("error").textContent = "";
+				document.getElementById("display1").textContent = "";
+				document.getElementById("display2").textContent = "";
+				document.getElementById("display3").textContent = "";
+				setContent(level);
+			}
+		}
+		
+		function nextLevel(){
+			level = level + 1;
+			document.getElementById("next").style.visibility = "hidden";
+			setLevel(level);
+		}
+		
+		function setContent(level) {
+			document.getElementById("level").textContent = "Level " + level.toString();
+			document.getElementById("v1").src = "Images/candy_lollipop.png";
+			document.getElementById("v2").src = "Images/chocolate_bar.png";
+			document.getElementById("v3").src = "Images/gingerman.png";
+			
+			for (var t = 0; t < 2; t++){
+				for (var i = 0; i < level; i++) {
+					var name = reqArray[t] + (i + 1).toString();
+					if (t == 0) {
+						document.getElementById(name).textContent = rArray[i];
+					} else {
+						document.getElementById(name).textContent = leveloutcomes[rArray[i]];
+					}
+				}
+			}
+		}
+		
+		setLevel(1);
+		
+		function isClicked(id) {
+			return document.getElementById(id);
+		}
+		
+		function unClick() {
+			for (var b = 0; b < 4; b++) {
+				var ele = document.getElementsByName(bArray[b]);
+				for(var i = 0; i < ele.length; i++) {
+					ele[i].checked = false;
+				}
+			}
+		}
+		
+		function displayArray(checked, index) {
+			var display;
+			if (checked[0] == "ELSE") {
+				display = checked[0] + " you are " + checked[3];
+			} else {
+				display = checked[0] + " the number of " + checked[1] + " is in range of ";
+				display = display + checked[2] + ", then you are " + checked[3] + ".";
+			}
+			document.getElementById("display" + index.toString()).textContent = display;
+		}
+		
+		function submit() {
+			if (document.getElementById("next").style.visibility == "visible") {
+				return;
+			}
+			
+			var checked = [];
+			var pass = true;
+			
+			for (var b = 0; b < 4; b++) {
+				var a = document.getElementsByName(bArray[b]);
+				for (var i = 0; i < a.length; i++) {
+					if (a[i].checked) {
+						checked.push(a[i].value);
+					}
+				}
+			}
+			
+			pass = check_buttons(checked);
+			//document.write(pass);
+			
+			if (!pass) {
+				setLevel(level);
+			} else {
+				index++;
+				unClick();
+				displayArray(checked, index);
+			}
+
+			if (index == level) {
+				document.getElementById("next").style.visibility = "visible";
+			}
+		}
+		
+	</script>
+
+</body>
+</html>

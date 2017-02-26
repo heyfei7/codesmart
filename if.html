@@ -1,0 +1,70 @@
+<script>
+//Teach if statements through click based game
+//level one
+
+var level = 1;
+var points = 0;
+
+var if_pressed = new Boolean(false);
+var elseif_pressed = new Boolean(false);
+var else_pressed = new Boolean(false);
+var buttons = new Array(4);
+
+var levelvariables = {
+    1 : "cookies",
+    2 : "chocolate",
+    3 : "candies"
+};
+
+var leveloutcomes = {
+    1 : {
+        ">5" : "happy"
+    },
+    2 : {
+        ">100" : "sick",
+        "<100" : "healthy"
+    },
+    3 : {
+        "0-4" : "sad",
+        "5-9" : "share",
+        ">10" : "happy"
+    }
+};
+
+allbuttons = ["if", "cookies", "<5", "sad"];
+
+
+
+public class Button_Check {
+    function check_buttons(Array allbuttons) {
+        //add in a block to check, if elseif_pressed, then else_pressed too
+        if (allbuttons[0] == "if") {
+            if_pressed = true;
+        }
+        else if (allbuttons[0] == "else if") {
+            if (!if_pressed) {
+                return false;
+            }
+            
+            elseif_pressed = true;
+        }
+        else if (allbuttons[0] == "else") {
+            if (!if_pressed) {
+                return false;
+            }
+            else_pressed = true;
+        }
+        else {
+            return false;
+        }
+        
+        if (allbuttons[1] != levelvariables[level]) {
+            return false;
+        }
+        if (allbuttons[3] != levelvariables[level][allbuttons[2]]) {
+            return false;
+        }
+        return true;
+    }
+}    
+</script>
