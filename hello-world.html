@@ -10,6 +10,7 @@
  	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Tangerine">
 	
 	<style type="text/css">
+	
 	#mainContent {
 		font-family: 'Nobile', Helvetica, Arial, sans-serif;
 		font-size: x-large;
@@ -32,16 +33,16 @@
 	}
 	
 	#code_display {
-		padding: 3px;
+		padding: 2%;
 		background: white;
 	}
 	
 	#choices th {
-		background: #9ce4e5;
+		background: #53bab0;
 	}
 		
 	.cb {
-		font: Arial;
+		font: Georgia;
 		width: 16%;
 		text-align: left;
 	}
@@ -49,28 +50,64 @@
 	.header {
 		background: url(Images/congruent_pentagon.png) repeat 0 0;
 		font-family: 'Corben', Georgia, Times, serif;
+		background-color: #c6ffe5;
+	}
+
+	body {
+		margin: 0px;
 	}
 	
 	.body {
-		background-color: #c6ffe5;
-		background-image: url(Images/turquoise-1861785_1280.jpg);
+		background-image: url(Images/background.jpeg);
 		
 	}
 	
 	h1 {
+		margin: 0% 15% 0% 15%;
+		padding-top: 5%;
+		padding-bottom: 5%;
 		text-shadow: 5px 1px 1px #ccc;
 	}
 	
 	.box {
 		margin: 2% 15% 2% 15%;
-		width = 64%;
-		font-family: Helvetica;
+		font-family: Georgia;
 		font-size: 17px;
 		color: #020028;
 	}
 	
-	#instruct {
-		background: #000000;
+	.bs {
+		font-weight: bold;
+		background-color: #ffffff;
+		opacity: 0.7;
+		font-size: 20px;
+	}
+	
+	.bs p {
+		padding: 2%;
+	}
+	
+	.rq {
+		display: block;
+	}
+	
+	.rq th{
+		width: 200px;
+		background-color: white;
+		opacity: 0.7;
+	}
+	
+	.rqt th{
+		background-color: #a8f4e6;
+	}
+	
+	#rc1, #rc2, #rc3 {
+		display: None;
+	}
+	
+	#instruct, #blanks {
+		margin-top: 0px;
+		background-color: #a8f4e6;
 		opacity: 0.7;
 	}
 	
@@ -84,9 +121,18 @@
 	
 	.inst {
 		font-family: Georgia;
-		margin: 2% 15% 2% 15%;
+		margin: 0% 15% 2% 15%;
+		padding: 2%;
+		background-color: transparent;
 		font-size: 20px;
-		color: #020028;
+	}
+	
+	.copyright {
+		color: #e5eae9;
+		font-family: Georgia;
+		font-size: 12px;
+		text-align: center;
+		padding-bottom: 10px;
 	}
 	
 	</style>
@@ -99,39 +145,45 @@
 	</div>
 	
 	<div class="body" id="main">
-		<div class="inst">
-			<p id="instruc">
+		<div class="box inst bs" id="instruct">
 			<strong>Instructions:</strong>
 			<br><br>
-			To complete the level, choose the appropriate code block from every column. <br>
-			Fill in the following blanks in the most logical manner possible, <br>
-			paying attention to the specifics provided below. <br>
-			</p>
+			<ul>
+				<li>To complete the level, choose the appropriate code block from every column</li>
+				<li>The level section tells you what goodies you are using</li>
+				<li>The IF / THEN chart tells you which numbers to use</li>
+				<li>Use IF / ELSE IF / ELSE in order, once in each level</li>
+				<li>When using else, you must leave the next 2 boxes blank</li>
+				<li>When done, click Submit in the bottom left corner</li>
+			</ul>
 		</div>
 		
-		<div class="box"><p id="level"></p></div>
-		
-		<div class="box"><p id="variable"></p></div>
+		<div class="box bs"><p id="level"></p></div>
 		
 		<div class="box" id="require">
 		<table>
-			<tr>
-				<th class="rq"><p id="r1"></p></th>
-				<th class="rq"><p id="c1"></p></th>
+			<tr class="rq rqt">
+				<th><p>IF you have...</p></th>
+				<th><p>THEN you are...</p></th>
 			</tr>
-			<tr>
-				<th class="rq"><p id="r2"></p></th>
-				<th class="rq"><p id="c2"></p></th>
+			<tr class="rq" id="rc1">
+				<th><p id="r1"></p></th>
+				<th><p id="c1"></p></th>
 			</tr>
-			<tr>
-				<th class="rq"><p id="r3"></p></th>
-				<th class="rq"><p id="c3"></p></th>
+			<tr class="rq" id="rc2">
+				<th><p id="r2"></p></th>
+				<th><p id="c2"></p></th>
+			</tr>
+			<tr class="rq" id="rc3">
+				<th><p id="r3"></p></th>
+				<th><p id="c3"></p></th>
 			</tr>
 		</table>
 		</div>
 		
-		<div class="box" id="blanks">
-			<p>___ the number of _____ is in range of ___, then _____.</p>
+		<div class="box bs" id="blanks">
+			<p>&nbsp;&nbsp;&nbsp;&nbsp;_____ &nbsp;&nbsp; the number of &nbsp;&nbsp;_____ &nbsp;&nbsp;
+			is in range of&nbsp;&nbsp;_____,&nbsp;&nbsp;then you are &nbsp;&nbsp;_____.</p>
 		</div>
 		
 		<div class="box" id="code_display">
@@ -139,6 +191,13 @@
 			<p id="display2"></p>
 			<p id="display3"></p>
 		</div>
+		
+		<!-- <div class="box" id="code_display">
+			<p>PYTHON CODE GENERATED:</p>
+			<p id="python1"></p>
+			<p id="python2"></p>
+			<p id="python3"></p>
+		</div> -->
 		
 		<div class="box" id="error"></div>
 		
@@ -170,8 +229,8 @@
 		  </tr>
 		  <tr>
 		  	<th class="cb"></th>
-		  	<th class="cb"><input type="radio" name="var" value="NOTHING"><p>...</p></th>
-		  	<th class="cb"><input type="radio" name="exp" value="NOTHING"><p>...</p></th>
+		  	<th class="cb"><input type="radio" name="var" value="NOTHING"><p>[blank]</p></th>
+		  	<th class="cb"><input type="radio" name="exp" value="NOTHING"><p>[blank]</p></th>
 		  	<th class="cb"></th>
 		  </tr>
 		</table>
@@ -180,6 +239,11 @@
 		<div class="box">
 			<button id="submit" onclick="submit()">Submit</button>
 			<button id="next" onclick="nextLevel()">Next Level</button>
+		</div>
+		
+		<div class="box bs"><p id="points"></p></div>
+		<div class="copyright"> 
+		Made at WiCHacks 2017 by the Edu Candy team!
 		</div>
 	</div>
 	
@@ -213,6 +277,10 @@
 		
 		function check_buttons(allbuttons) {
 			//add in a block to check, if elseif_pressed, then else_pressed too
+			if (allbuttons.length != 4) {
+				return false;
+			}
+			
 			if (allbuttons[0] == "IF") {
 		    	if_pressed = true;
 			}
@@ -238,6 +306,7 @@
 		    if (else_pressed) {
 		    	if (allbuttons[1] != "NOTHING" && allbuttons[2] != "NOTHING") {
 		    		//document.write(allbuttons[1]);
+		    		//document.write("point4");
 		    		return false;
 		    	}
 	    		return true;
@@ -245,10 +314,12 @@
 		    	if (allbuttons[1] != levelvariables[level]) {
 		    		//document.write(level);
 		    		//document.write("1 != level");
+		    		//document.write("point5");
 		    		return false;
 		    	}
 			    if (allbuttons[3] != leveloutcomes[allbuttons[2]]) {
 			    	//document.write("3 != 2");
+			    	//document.write("point6");
 			        return false;
 		    	}
 		    	return true;
@@ -269,29 +340,44 @@
 		function setLevel(level) {
 			if (level > 3) {
 				document.getElementById("error").textContent = "";
+				document.getElementById("points").textContent = "Points: " + points.toString();
 				document.getElementById("display1").textContent = "YOU PASSED";
 				document.getElementById("display2").textContent = "";
 				document.getElementById("display3").textContent = "";
+				// document.getElementById("python1").textContent = "";
+				// document.getElementById("python2").textContent = "";
+				// document.getElementById("python3").textContent = "";
 			} else {
+				if_pressed = false;
+		        elseif_pressed = false;
+		        else_pressed = false;
 				index = 0;
 				unClick();
-				document.getElementById("variable").textContent = levelvariables[level];
+				
+				document.getElementById("points").textContent = "Points: " + points.toString();
 				document.getElementById("error").textContent = "";
 				document.getElementById("display1").textContent = "";
 				document.getElementById("display2").textContent = "";
 				document.getElementById("display3").textContent = "";
+				// document.getElementById("python1").textContent = "";
+				// document.getElementById("python2").textContent = "";
+				// document.getElementById("python3").textContent = "";
+				for (var i = 1; i <= level; i++) {
+					document.getElementById("rc" + i.toString()).style.display = "block";
+				}
 				setContent(level);
 			}
 		}
 		
 		function nextLevel(){
+			points = points + (level * 5);
 			level = level + 1;
 			document.getElementById("next").style.visibility = "hidden";
 			setLevel(level);
 		}
 		
 		function setContent(level) {
-			document.getElementById("level").textContent = "Level " + level.toString();
+			document.getElementById("level").textContent = "Level " + level.toString() + ": Determine your emotion, given an amount of " + levelvariables[level];
 			document.getElementById("v1").src = "Images/candy_lollipop.png";
 			document.getElementById("v2").src = "Images/chocolate_bar.png";
 			document.getElementById("v3").src = "Images/gingerman.png";
@@ -325,12 +411,18 @@
 		
 		function displayArray(checked, index) {
 			var display;
+			// var python;
 			if (checked[0] == "ELSE") {
 				display = checked[0] + " you are " + checked[3];
+				// python = checked[0] + ": emotion = " + checked[3];
 			} else {
 				display = checked[0] + " the number of " + checked[1] + " is in range of ";
 				display = display + checked[2] + ", then you are " + checked[3] + ".";
+				// python = checked[0] + " " + checked[1] + " in range(" + checked[2] + "):";
+				// python = python + " emotion = " + checked[3];
 			}
+			
+			// document.getElementById("python" + index.toString()).textContent = python;
 			document.getElementById("display" + index.toString()).textContent = display;
 		}
 		
