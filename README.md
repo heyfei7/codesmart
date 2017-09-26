@@ -12,7 +12,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 ## Screenshots
 
 ### Home Screen
-![Alt text](/Home Screen.jpg?raw=true "Optional Title")
+![Alt text](/Home Screen.png?raw=true "Optional Title")
 
 ### Application Screen
-![Alt text](/Application.jpg?raw=true "Optional Title")
+![Alt text](/Application.png?raw=true "Optional Title")
