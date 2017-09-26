@@ -9,5 +9,10 @@ This project is created on the Cloud 9 Environment
 Visit http://docs.c9.io for documentation, or http://support.c9.io for support.
 To watch some training videos, visit http://www.youtube.com/user/c9ide
 
-![Alt text](/codesmart/Home Screen.jpg?raw=true "Optional Title")
-![Alt text](/codesmart/Application.jpg?raw=true "Optional Title")
+## Screenshots
+
+### Home Screen
+![Alt text](/Home Screen.jpg?raw=true "Optional Title")
+
+### Application Screen
+![Alt text](/Application.jpg?raw=true "Optional Title")
